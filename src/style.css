@@ -1,0 +1,529 @@
+body {
+  min-height: 100vh;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #F8EDE3;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.screen-flex {
+  display: flex;
+}
+
+footer {
+  min-height: 80px;
+}
+
+.footer_img {
+  width: 100px;
+}
+
+.footer_logo_block {
+  margin-top: 30px;
+}
+
+.footer_link {
+  font-size: 1,5rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #85586F;
+}
+
+h1 { 
+  color: #576F72; 
+  text-align: center;
+}
+
+p {
+  color: #85586F;
+}
+
+.gameboard-wrapper {
+   -webkit-perspective: 400px;
+  transform: translate3d(0,0,0);
+  perspective: 400px;
+  text-align: center;
+  position: relative;
+  padding-top: 15px;
+  margin-bottom: 50px;
+}
+
+.gameboard-area {
+  transform: rotateX(15deg);
+  transform-origin: bottom;
+  z-index: 500;
+  position: relative;
+  width: 500px;
+  background-image: url(images/background-meadow-resize.jpg); 
+  min-height: 250px;
+  margin: 10px auto 0 auto;
+}
+
+.gameboard {
+  transform-style: preserve-3d;
+  padding: 15px 15px 22px 15px;
+  z-index: 555;
+  margin: 0px auto 0px auto;
+  display: inline-block;
+  position:relative;
+  white-space: nowrap;
+}
+
+.board-edge {
+  transform: rotateX(-40deg);
+  transform-origin: top;
+  background: #ac741c;
+  width: 500px;
+  margin: 0 auto 10px auto;
+  height: 15px;
+  z-index: 2;
+}
+
+.section-panels {
+  display: flex;
+  justify-content: space-between;
+  background-color: #D0B8A8;
+  min-height: 380px;
+}
+
+.panel-input {
+  margin: 10px;
+  width: 48%;
+  background-color: #DFD3C3;
+}
+
+.panel-input-p {
+  margin: 10px;
+}
+
+.panel-code {
+  margin: 10px;
+  width: 48%;
+  background-color: #DFD3C3;
+}
+
+.panel-input-area {
+  margin: 7px;
+  min-height: 300px;
+  background-color: #F5EFE7;
+}
+
+.panel-output-area {
+  margin: 7px;
+  min-height: 300px;
+  background-color: #576F72; ;
+  /* background-color: #F5EFE7; */
+}
+
+.input-area {
+margin: 7px;
+}
+
+.level-section {
+  /* display: flex; */
+  background-color: #E4DCCF;
+  width: 20%;
+  margin-right: 10px;
+}
+
+.lev-heading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.level-menu {
+  color: #85586F;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.lev-menu {
+  text-decoration: none;
+  color: #576F72;
+}
+
+.right-part {
+  width: 70%;
+}
+
+.lev-pic-tip {
+  width: 16px;
+  margin: 3px;
+  /* display: none; */
+}
+
+.lev-pic-check {
+ width: 16px;
+ margin: 3px;
+  /* display: none; */
+}
+
+.btns-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.enter-btn {
+  /* margin-left: 75%;
+  margin-top: 18%; */
+  color: #85586F;
+  border: 1px solid #576F72;
+  background-color: #FAFAFA;
+  width: 90px; 
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+.enter-btn:hover {
+  background-color: #FDDCC4;
+  border: 1px solid #FDDCC4;
+}
+
+.help-btn {
+  /* margin-left: 65%;
+  margin-top: 0%; */
+  color: #85586F;
+  border: 1px solid #576F72;
+  background-color: #FAFAFA;
+  width: 90px; 
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+.help-btn:hover {
+  background-color: #FDDCC4;
+  border: 1px solid #FDDCC4;
+}
+
+.reset-btn {
+  margin-left: 30%;
+  margin-top: 5%;
+  color: #85586F;
+  border: 1px solid #576F72;
+  background-color: #FAFAFA;
+  width: 110px; 
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+.reset-btn:hover {
+  background-color: #FDDCC4;
+  border: 1px solid #FDDCC4;
+}
+/* Item animation is based on original CSS Diner app */
+
+.animated {
+  transform-origin: bottom;
+  animation: animateStart .4s ease-out, animate 1s infinite;
+  animation-delay: 0s, .4s;
+}
+
+.animated-win {
+  transform-origin: bottom;
+  animation: animateStart .4s ease-out, animate 1s infinite;
+  animation-delay: 0s, .4s;
+}
+
+@keyframes animateStart {
+  0% {
+    transform: skew(0deg,0deg) scaleY(1) ;
+    animation-timing-function: ease-in;
+   }
+  50% {
+    transform: skew(0deg,0deg) scaleY(.9);
+    animation-timing-function: ease-out;
+  }
+  100% { transform: skew(5deg,0deg) scaleX(1); }
+}
+
+@keyframes animate {
+  0% { transform: skew(5deg,0deg) scaleX(1); }
+  15% { transform: skew(1.5deg,0deg) scaleY(.9) ; }
+  55% { transform: skew(-5deg,0deg) scaleX(1); }
+  65% { transform: skew(-1.5deg,0deg) scaleY(.9) ; }
+  100% {transform: skew(5deg,0deg) scaleX(1); }
+}
+
+acorn {
+  /* border-bottom: solid 5px #DDD;
+  background: white;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  box-shadow: 0px 8px 0px rgba(0,0,0,.1); */
+  margin-top: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+acorn berries {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  
+}
+
+berries, frog, hedgehog, oakleaf, owl, leaf, snail, mushrooms, acorn {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: 0.5s;
+}
+
+snail oakleaf {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+}
+
+leaf snail {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+}
+
+leaf hedgehog {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+}
+
+
+hedgehog mushrooms {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+hedgehog berries {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+frog berries {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+}
+
+snail leaf {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+}
+
+frog::before {
+  display: block;
+  content: '';
+  width: 100px;
+  height: 120px;
+  background-image: url('images/frog.PNG');
+  background-repeat: no-repeat;
+}
+
+hedgehog::before {
+  display: block;
+  content: '';
+  width: 100px;
+  height: 120px;
+  background-image: url('images/hedgehog.PNG');
+  background-repeat: no-repeat;
+}
+
+acorn::before {
+  display: block;
+  content: '';
+  width: 100px;
+  height: 120px;
+  background-image: url('images/acorn.PNG');
+}
+
+oakleaf::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/oak-leaf.PNG');
+  background-repeat: no-repeat;
+}
+
+owl::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/owl.PNG');
+  background-repeat: no-repeat;
+}
+
+leaf::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/green-leaf.png');
+  background-repeat: no-repeat;
+}
+
+snail::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/snail.PNG');
+  background-repeat: no-repeat;
+}
+
+mushrooms::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/mushrooms.PNG');
+  background-repeat: no-repeat;
+}
+
+berries::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/berries.PNG');
+  background-repeat: no-repeat;
+}
+
+acorn:hover, berries:hover, frog:hover, hedgehog:hover, oakleaf:hover, owl:hover, leaf:hover, snail:hover, mushrooms:hover {
+  /* opacity: .75; */
+  scale: 1.2;
+transform-origin: bottom;
+/* animation: animateStart .5s ease-out, animate 1s infinite; */
+animation-delay: 0s, .5s;
+}
+
+mushrooms.not-good::before {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 120px;
+  background-image: url('images/standing-mushrooms.PNG');
+  background-repeat: no-repeat;
+}
+
+.tooltip {
+  position: fixed;
+  padding: 10px 20px;
+  border: 1px solid #b3c9ce;
+  border-radius: 4px;
+  text-align: center;
+  font: italic 14px/1.3 sans-serif;
+  color: #363434;
+  background: #FFFFFF;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.highlight {
+  color: blueviolet;
+}
+
+.ani-jiggle {
+  animation: jiggle 0.8s ease-out;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scaleX(.87) scaleY(.8);
+
+  }
+  40% {
+    transform: scale(1.15);
+  }
+
+}
+
+.info-window {
+  margin-left: 2%;
+  height: 13px;
+  padding: 10px;
+}
+
+.red {
+  color: #b9123c;
+}
+
+.green {
+  color: #368380;
+}
+
+.win-text { 
+  color: #F0EBE3;
+  display: block;
+  font-size: 50px;
+  margin-top: 50px;
+}
+
+.win-text-sm { 
+  font-size: 20px;
+}
+
+.invisible {
+  display: none;
+}
+
+.ani-jump {
+  transform-origin: 50% 50%;
+  animation: jump .8s linear alternate infinite;
+}
+
+@keyframes jump {
+  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translate3d(0,50%,0) scale3d(.5,0.8.5,1);}
+  100% {transform: translate3d(0,80%,0) scale3d(1.2,.8,1);}
+}
+
+.hover-1:hover, .hover-2:hover, .hover-3:hover, .hover-4:hover, .hover-5:hover, .hover-6:hover, .hover-7:hover, .hover-8:hover {
+  color: #9bd493;
+}
+
+.hover-glow {
+  scale: 1.4;
+}
+
+.coloring {
+  color: #e2b1ca;
+}
+
+@media (max-width: 840px) {
+  .input-area {
+      width: 90%;
+  }
+
+  .reset-btn {
+    width: 60%;
+  }
+}
+
+code {
+  width: 95%;
+  white-space: pre-wrap; 
+}
+

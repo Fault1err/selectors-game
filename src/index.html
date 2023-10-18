@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS CSS Selectors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" 
+rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RSS CSS Selectors</h1>
+        </header>
+        <main>
+            <div class="screen-flex">
+                <section class="level-section">
+                    <p class="lev-heading">Levels</p>
+                    <div class="lev-area"></div>
+                    <button class="reset-btn">Reset Progress</button>
+                </section>
+
+                <div class="right-part"> 
+                    <section class="section-gameboard">
+                        <div class="gameboard-wrapper">
+                            <div class="gameboard-area">
+                                <div class="gameboard"></div>
+                                <!-- <img class="animated" src="images/berries.PNG" alt="berries"> -->
+                                </div>
+                            <div class="board-edge"></div>
+                        </div>
+                    </section>
+                    <section class="section-panels">
+                        <div class="panel-input">
+                            <p class="panel-input-p">CSS-Editor</p>
+                            <div class="panel-input-area">
+                                <input class="input-area" type="text" placeholder="Type in a CSS-Selector"/>
+                                <div class="info-window"></div>
+                                <div class="btns-flex">
+                                    <button class="enter-btn">Enter</button>
+                                <button class="help-btn">Help!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-code">
+                            <p class="panel-input-p">HTML-Viewer</p>
+                            <div class="panel-output-area">
+                                <!-- <plate></plate> -->
+                            </div>
+                        </div>
+                    </section>
+                </div> 
+            </div>
+        </main>
+        <footer>
+            <div class="footer_logo_block">
+                <a class="footer_link" href="https://rs.school">
+                    <img class="footer_img" src="https://rs.school/images/rs_school_js.svg" alt="RSSchool logo">
+                </a>
+            </div>
+            <a class="footer_link" href="https://github.com/Fault1err">Github</a>
+        </footer>
+    </div>
+
+    
+   
+    <!-- <code data-tooltip="Click-click">text text 
+
+        async function render() {
+            const subHeader = document.createElement('h2');
+            subHeader.innerHTML = 'This elements was created by js';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            const myImage = await createImage(image1);
+            document.body.appendChild(subHeader);
+            document.body.appendChild(myImage);
+        }
+
+
+    </code> -->
+</body>
+</html>
